@@ -74,12 +74,17 @@ is_crying = cry_prob > 0.65
 is_awake = (imu_label.lower() == "moving")
 
 # display
-cry_html = '<div class="big-status crying">😭 CRYING</div>' if is_crying \
-           else '<div class="big-status not-crying">😊 NOT CRYING</div>'
-cry_placeholder.markdown(cry_html, unsafe_allow_html=True)
-
-sleep_html = '<div class="big-status awake">😊 AWAKE</div>' if is_awake \
-             else '<div class="big-status sleeping">😴 SLEEPING</div>'
+if is_crying: 
+    cry_html = '<div class="big-status crying">😭 CRYING</div>' 
+    sleep_html = '<div class="big-status crying">😭 AWAKE</div>' 
+else:
+    cry_html = '<div class="big-status not-crying">😊 NOT CRYING</div>'
+    if is_awake:
+        sleep_html = '<div class="big-status awake">😊 AWAKE</div>'
+    else: 
+        sleep_html = '<div class="big-status sleeping">😴 SLEEPING</div>'
+        
+cry_placeholder.markdown(cry_html, unsafe_allow_html=True)   
 sleep_placeholder.markdown(sleep_html, unsafe_allow_html=True)
 
 # metricas
