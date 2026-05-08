@@ -46,11 +46,11 @@ The project is divided into two sensing pipelines:
 
 ## Repository Structure
 
-src/         Main application and processing modules
-firmware/    Arduino firmware and embedded deployment
-models/      Audio Trained model weights
-notebooks/   Audio and IMU exploratory analysis
-assets/      Diagrams, screenshots, and demo videos
+- src/         Main application and processing modules
+- firmware/    Arduino firmware and embedded deployment
+- models/      Audio Trained model weights
+- notebooks/   Audio and IMU exploratory analysis
+- assets/      Diagrams, screenshots, and demo videos
 
 --- 
 
